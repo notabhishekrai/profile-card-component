@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;500;600;700;900&display=swap");
+* {
+  font-family: "kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  letter-spacing: 0.2rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #19a2ae;
+  font-size: 1.8rem;
+  position: relative;
+  width: 100vw;
+}
+
+body::after {
+  content: url("../images/bg-pattern-top.svg");
+  position: fixed;
+  top: -40%;
+  right: 50%;
+}
+
+body::before {
+  content: url("../images/bg-pattern-bottom.svg");
+  position: fixed;
+  bottom: -50%;
+  right: -50%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#main .card {
+  z-index: 2;
+  border-radius: 13px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  background-color: white;
+  box-shadow: 0 0 5rem #6a6f81;
+}
+
+#main .card-head {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  border-radius: 13px 13px 0 0;
+}
+
+#main .card-head figure,
+#main .card-head img {
+  border-radius: inherit;
+  width: 100%;
+}
+
+#main .card-body {
+  grid-column: 1/3;
+  justify-self: center;
+  grid-row: 2/4;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+#main .card-body-img {
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: white;
+}
+
+#main .card-body-img img {
+  border-radius: inherit;
+}
+
+#main .card-body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+#main .card-body-content strong span {
+  font-weight: 400;
+  color: #969696;
+}
+
+#main .card-body-content p {
+  font-size: 1.2rem;
+  color: #969696;
+  font-weight: 400;
+}
+
+#main .card-stats {
+  grid-column: 1/3;
+  display: flex;
+  padding: 1.5em 0;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-top: 1px solid rgba(45, 50, 72, 0.2);
+}
+
+#main .card-stats .card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 300;
+}
+
+#main .card-stats .card-stat strong {
+  font-size: 2rem;
+}
+
+#main .card-stats .card-stat p {
+  font-size: 1rem;
+}
+/*# sourceMappingURL=index.css.map */

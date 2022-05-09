@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;500;600;700;900&display=swap");
+
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  font-family: "kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  letter-spacing: 0.2rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: hsl(185, 75%, 39%);
+  font-size: 1.8rem;
+  position: relative;
+  width: 100vw;
+
+  &::after {
+    content: url("../images/bg-pattern-top.svg");
+    position: fixed;
+    top: -40%;
+    right: 50%;
+  }
+
+  &::before {
+    content: url("../images/bg-pattern-bottom.svg");
+    position: fixed;
+    bottom: -50%;
+    right: -50%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#main {
+  @include flex-col();
+  height: 100vh;
+  .card {
+    z-index: 2;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    background-color: $white;
+    box-shadow: 0 0 5rem $dark-grayish-blue;
+
+    &-head {
+      grid-column: 1/3;
+      grid-row: 1/3;
+      border-radius: 13px 13px 0 0;
+      figure,
+      img {
+        border-radius: inherit;
+        width: 100%;
+      }
+    }
+
+    &-body {
+      grid-column: 1/3;
+      justify-self: center;
+      grid-row: 2/4;
+      margin-bottom: 2rem;
+
+      @include flex-col();
+      gap: 1em;
+
+      &-img {
+        border-radius: 50%;
+        padding: 0.5rem;
+        background-color: $white;
+
+        img {
+          border-radius: inherit;
+        }
+      }
+
+      &-content {
+        @include flex-col();
+        gap: 0.7rem;
+        strong {
+          span {
+            font-weight: 400;
+            color: $dark-gray;
+          }
+        }
+        p {
+          font-size: 1.2rem;
+          color: $dark-gray;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &-stats {
+      grid-column: 1/3;
+      display: flex;
+      padding: 1.5em 0;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      border-top: 1px solid hsla(229, 23%, 23%, 0.2);
+      .card-stat {
+        @include flex-col();
+        gap: 0.5rem;
+        font-weight: 300;
+
+        strong {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
